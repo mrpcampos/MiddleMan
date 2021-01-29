@@ -68,7 +68,7 @@ def get_offers():
             offers = offers['offers']
         except ValueError as e:
             print(e)
-            return "Failed to comunicate properly with remote provider. ", 503
+            return "Failed to comunicate properly with remote provider.", 503
         except jsonschema.ValidationError as e:
             print(e)
             return "Failed to comunicate properly with remote provider. Received files on won't match schema.", 503
