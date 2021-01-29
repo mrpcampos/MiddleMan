@@ -1,0 +1,12 @@
+{
+    'database': {
+        'user': 'postgres',
+        'pass': 'postgres',
+        'ip': 'localhost',
+        'port': '5432',
+        'db': 'middle_man',
+    },
+    'offer_duration_minutes': 10,
+    'proposal_minimal_days_interval': 30
+
+}

@@ -1,10 +1,12 @@
-from flask import request, Blueprint, Flask, jsonify
-from sqlalchemy import func, text
+from flask import request, Blueprint, jsonify
+from sqlalchemy import func
 from datetime import datetime, timedelta
 
 from jsonschema import validate
 import jsonschema
+import yaml
 import json
+import os
 
 import requests
 app = Blueprint('', __name__)
@@ -20,9 +22,13 @@ with open('proposal-schema.json') as file:
 with open('offers-schema.json') as file:
     offers_schema = json.loads(file.read())
 
+# Carregando arquivo de configurações
+with open(os.environ['MIDDLEMAN_CONFIG']) as f:
+    config_file = yaml.safe_load(f)
+
 # Em uma aplicação em produção essa variável viria de um arquivo de configurações, para fácil alteração
-_offer_duration = 10
-_proposal_min_interval = 30
+_offer_duration = config_file['offer_duration_minutes']
+_proposal_min_interval = config_file['proposal_minimal_days_interval']
 
 
 @app.route('/')
@@ -155,7 +161,7 @@ def make_proposal():
     if accepted:
         return "Proposal Approved!", 200
     else:
-        return "Proposal Refused.", 203
+        return "Proposal Refused.", 403
 
 
 def client_sensitive_fields_match(received_client, know_client: Client):
