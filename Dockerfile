@@ -12,8 +12,8 @@ COPY client-schema.json .
 COPY offers-schema.json .
 COPY proposal-schema.json .
 
-RUN python src/manage.py db init
-RUN python src/manage.py db migrate
-RUN python src/manage.py db upgrade
+RUN python manage.py db init
+RUN python manage.py db migrate
+RUN python manage.py db upgrade
 
 CMD [ "flask", "run" ]
