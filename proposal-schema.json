@@ -1,0 +1,246 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "proposal": {
+                "client": {
+                    "cpf": "111.111.111-11",
+                    "full_name": "Some Nobrenome",
+                    "birthdate": "2000-01-01T00:00:00.000Z",
+                    "email": "hibes16554@serohiv.com",
+                    "phone": 47988887778,
+                    "liquid_salary": 25000
+                },
+                "offer": {
+                    "partner_id": 2,
+                    "partner_name": "Parceiro 2",
+                    "value": 12000,
+                    "installments": 36,
+                    "tax_rate_percent_montly": 2.2,
+                    "total_value": 17497.8
+                }
+            }
+        }
+    ],
+    "required": [
+        "proposal"
+    ],
+    "properties": {
+        "proposal": {
+            "$id": "#/properties/proposal",
+            "default": {},
+            "description": "The proposal wrapper, contains information about the client and which offer he is trying to accept.",
+            "examples": [
+                {
+                    "client": {
+                        "cpf": "111.111.111-11",
+                        "full_name": "Some Nobrenome",
+                        "birthdate": "2000-01-01T00:00:00.000Z",
+                        "email": "hibes16554@serohiv.com",
+                        "phone": 47988887778,
+                        "liquid_salary": 25000
+                    },
+                    "offer": {
+                        "partner_id": 2,
+                        "partner_name": "Parceiro 2",
+                        "value": 12000,
+                        "installments": 36,
+                        "tax_rate_percent_montly": 2.2,
+                        "total_value": 17497.8
+                    }
+                }
+            ],
+            "required": [
+                "client",
+                "offer"
+            ],
+            "title": "Proposal",
+            "type": "object",
+            "properties": {
+                "client": {
+                    "$id": "#/properties/proposal/properties/client",
+                    "default": {},
+                    "description": "Client's information wrapper.",
+                    "examples": [
+                        {
+                            "cpf": "111.111.111-11",
+                            "full_name": "Some Nobrenome",
+                            "birthdate": "2000-01-01T00:00:00.000Z",
+                            "email": "hibes16554@serohiv.com",
+                            "phone": 47988887778,
+                            "liquid_salary": 25000
+                        }
+                    ],
+                    "required": [
+                        "cpf",
+                        "full_name",
+                        "birthdate",
+                        "email",
+                        "phone",
+                        "liquid_salary"
+                    ],
+                    "title": "Client",
+                    "type": "object",
+                    "properties": {
+                        "cpf": {
+                            "$id": "#/properties/proposal/properties/client/properties/cpf",
+                            "default": "",
+                            "description": "Client's main identifier as a string using the default cpf format.",
+                            "examples": [
+                                "111.111.111-11"
+                            ],
+                            "title": "CPF",
+                            "type": "string"
+                        },
+                        "full_name": {
+                            "$id": "#/properties/proposal/properties/client/properties/full_name",
+                            "default": "",
+                            "description": "Client's full name.",
+                            "examples": [
+                                "Some Nobrenome"
+                            ],
+                            "title": "Full Name",
+                            "type": "string"
+                        },
+                        "birthdate": {
+                            "$id": "#/properties/proposal/properties/client/properties/birthdate",
+                            "default": "",
+                            "description": "Client's birthdate following ISO 8601's format.",
+                            "examples": [
+                                "2000-01-01T00:00:00.000Z"
+                            ],
+                            "title": "Birthdate",
+                            "type": "string"
+                        },
+                        "email": {
+                            "$id": "#/properties/proposal/properties/client/properties/email",
+                            "default": "",
+                            "description": "Client's email for contact.",
+                            "examples": [
+                                "hibes16554@serohiv.com"
+                            ],
+                            "title": "Email",
+                            "type": "string"
+                        },
+                        "phone": {
+                            "$id": "#/properties/proposal/properties/client/properties/phone",
+                            "default": 0,
+                            "description": "Client's phone number for contact.",
+                            "examples": [
+                                47988887778
+                            ],
+                            "title": "Phone Number",
+                            "type": "integer"
+                        },
+                        "liquid_salary": {
+                            "$id": "#/properties/proposal/properties/client/properties/liquid_salary",
+                            "default": 0,
+                            "description": "Client's current liquid salary.",
+                            "examples": [
+                                25000
+                            ],
+                            "title": "Liquid Salary",
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "offer": {
+                    "$id": "#/properties/proposal/properties/offer",
+                    "default": {},
+                    "description": "Choosen offer wrapper.",
+                    "examples": [
+                        {
+                            "partner_id": 2,
+                            "partner_name": "Parceiro 2",
+                            "value": 12000,
+                            "installments": 36,
+                            "tax_rate_percent_montly": 2.2,
+                            "total_value": 17497.8
+                        }
+                    ],
+                    "required": [
+                        "partner_id",
+                        "partner_name",
+                        "value",
+                        "installments",
+                        "tax_rate_percent_montly",
+                        "total_value"
+                    ],
+                    "title": "Offer",
+                    "type": "object",
+                    "properties": {
+                        "partner_id": {
+                            "$id": "#/properties/proposal/properties/offer/properties/partner_id",
+                            "default": 0,
+                            "description": "Offer's partner main identifier.",
+                            "examples": [
+                                2
+                            ],
+                            "title": "Partner Id",
+                            "type": "integer"
+                        },
+                        "partner_name": {
+                            "$id": "#/properties/proposal/properties/offer/properties/partner_name",
+                            "default": "",
+                            "description": "Offer's Partner Name.",
+                            "examples": [
+                                "Parceiro 2"
+                            ],
+                            "title": "Partner Name",
+                            "type": "string"
+                        },
+                        "value": {
+                            "$id": "#/properties/proposal/properties/offer/properties/value",
+                            "default": 0,
+                            "description": "Offers value.",
+                            "examples": [
+                                12000
+                            ],
+                            "title": "Value",
+                            "type": "integer"
+                        },
+                        "installments": {
+                            "$id": "#/properties/proposal/properties/offer/properties/installments",
+                            "default": 0,
+                            "description": "Offer's max number of installments.",
+                            "examples": [
+                                36
+                            ],
+                            "title": "Installments",
+                            "type": "integer"
+                        },
+                        "tax_rate_percent_montly": {
+                            "$id": "#/properties/proposal/properties/offer/properties/tax_rate_percent_montly",
+                            "default": 0.0,
+                            "description": "Installments's monthly tax rate.",
+                            "examples": [
+                                2.2
+                            ],
+                            "title": "Monthly Tax Rate Percentage",
+                            "type": "number"
+                        },
+                        "total_value": {
+                            "$id": "#/properties/proposal/properties/offer/properties/total_value",
+                            "default": 0.0,
+                            "description": "Expected total return value.",
+                            "examples": [
+                                17497.8
+                            ],
+                            "title": "Total Value",
+                            "type": "number"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "additionalProperties": false
+}

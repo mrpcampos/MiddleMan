@@ -1,0 +1,89 @@
+{
+    "$id": "http://example.com/example.json",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "default": {},
+    "description": "The root object represents the client, containing all of its information.",
+    "examples": [
+        {
+            "cpf": "111.111.111-11",
+            "full_name": "Some Nobrenome",
+            "birthdate": "2000-01-01T00:00:00.000Z",
+            "email": "hibes16554@serohiv.com",
+            "phone": 47988887778,
+            "liquid_salary": 25000
+        }
+    ],
+    "required": [
+        "cpf",
+        "full_name",
+        "birthdate",
+        "email",
+        "phone",
+        "liquid_salary"
+    ],
+    "title": "Client",
+    "type": "object",
+    "properties": {
+        "cpf": {
+            "$id": "#/properties/cpf",
+            "default": "",
+            "description": "Client's main identifier as a string using the default cpf format.",
+            "examples": [
+                "111.111.111-11"
+            ],
+            "title": "CPF",
+            "type": "string"
+        },
+        "full_name": {
+            "$id": "#/properties/full_name",
+            "default": "",
+            "description": "Client's full name.",
+            "examples": [
+                "Some Nobrenome"
+            ],
+            "title": "Full Name",
+            "type": "string"
+        },
+        "birthdate": {
+            "$id": "#/properties/birthdate",
+            "default": "",
+            "description": "Client's birthdate following ISO 8601's format.",
+            "examples": [
+                "2000-01-01T00:00:00.000Z"
+            ],
+            "title": "Birthdate",
+            "type": "string"
+        },
+        "email": {
+            "$id": "#/properties/email",
+            "default": "",
+            "description": "Client's email for contact.",
+            "examples": [
+                "hibes16554@serohiv.com"
+            ],
+            "title": "Email",
+            "type": "string"
+        },
+        "phone": {
+            "$id": "#/properties/phone",
+            "default": 0,
+            "description": "Client's phone number for contact.",
+            "examples": [
+                47988887778
+            ],
+            "title": "Phone Number",
+            "type": "integer"
+        },
+        "liquid_salary": {
+            "$id": "#/properties/liquid_salary",
+            "default": 0,
+            "description": "Client's current liquid salary.",
+            "examples": [
+                25000
+            ],
+            "title": "Liquid Salary",
+            "type": "integer"
+        }
+    },
+    "additionalProperties": false
+}

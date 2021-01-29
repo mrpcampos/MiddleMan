@@ -1,0 +1,5 @@
+.dockerignore
+.idea/
+env/
+migrations/
+src/__pycache__/
